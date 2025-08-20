@@ -7,9 +7,13 @@ test_01:
   image: golang:1.17
   script:
    - go test .
+  rules:
+    - changes:
+        - "*.go"
 
 build_01:
   stage: build
   image: docker:latest
   script:
    - docker build .
+  needs: []
